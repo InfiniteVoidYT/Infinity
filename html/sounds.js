@@ -1,4 +1,20 @@
 (function () {
+
+document.title = "Soundboard | Infinity";
+
+function setFavicon(url) {
+  let link = document.querySelector("link[rel*='icon']");
+  if (!link) {
+    link = document.createElement("link");
+    link.rel = "icon";
+    document.head.appendChild(link);
+  }
+  link.type = "image/png";
+  link.href = url;
+}
+
+setFavicon("https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/icon.png");
+
   const jsonUrl = "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/main/data/json/sounds.json";
 
   if (!document.getElementById('fredoka-font-link')) {
