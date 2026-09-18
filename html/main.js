@@ -1645,7 +1645,7 @@ button.addEventListener('click', () => {
     let file;
     if (val === 'games') file = 'games.js';
     else if (val === 'soundboard') file = 'sounds.js';
-    fetch(`https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/${file}`)
+    fetch(`https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/html/${file}`)
       .then(response => response.text())
       .then(scriptContent => {
         const script = document.createElement('script');
