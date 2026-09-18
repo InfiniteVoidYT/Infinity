@@ -947,7 +947,7 @@ document.body.appendChild(header);
 
 const description = document.createElement('div');
 description.className = 'description';
-description.textContent = 'The Powerhouse of all Bookmarklets';
+description.textContent = 'Where you can unleash Infinite Possibilities';
 document.body.appendChild(description);
 
 const inputArea = document.createElement('div');

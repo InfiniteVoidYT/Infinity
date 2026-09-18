@@ -944,7 +944,7 @@ document.body.appendChild(header);
 
 const description = document.createElement('div');
 description.className = 'description';
-description.textContent = 'The Powerhouse of all Bookmarklets';
+description.textContent = 'Where you can unleash Infinite Possibilities';
 document.body.appendChild(description);
 
 const inputArea = document.createElement('div');
@@ -1645,7 +1645,7 @@ button.addEventListener('click', () => {
     let file;
     if (val === 'games') file = 'games.js';
     else if (val === 'soundboard') file = 'sounds.js';
-    fetch(`https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/html/${file}`)
+    fetch(`https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/${file}`)
       .then(response => response.text())
       .then(scriptContent => {
         const script = document.createElement('script');
