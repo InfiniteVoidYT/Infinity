@@ -202,133 +202,72 @@ function injectBlackHole() {
       filter: blur(0.4px) contrast(1.15) saturate(1.1);
 
       -webkit-mask-image: 
-        radial-gradient(circle at center, transparent 20%, black 19.3%), 
+        radial-gradient(circle at center, transparent 24%, black 19.3%), 
         linear-gradient(to bottom, transparent 50%, black 50%);
       mask-image: 
-        radial-gradient(circle at center, transparent 20%, black 19.3%), 
+        radial-gradient(circle at center, transparent 24%, black 19.3%), 
         linear-gradient(to bottom, transparent 50%, black 50%);
     }
 
     #infinity-blackhole .stars {
       position: absolute;
       inset: 0;
-      background-image:
-        radial-gradient(1px 1px at 2% 8%, #fff, transparent),
-        radial-gradient(1.2px 1.2px at 5% 22%, #e0f0ff, transparent),
-        radial-gradient(1px 1px at 8% 41%, #fff, transparent),
-        radial-gradient(1.4px 1.4px at 11% 63%, #d0e8ff, transparent),
-        radial-gradient(1px 1px at 14% 85%, #fff, transparent),
-        radial-gradient(1.1px 1.1px at 17% 12%, #e8f4ff, transparent),
-        radial-gradient(1.3px 1.3px at 20% 34%, #c8e0ff, transparent),
-        radial-gradient(1px 1px at 23% 56%, #fff, transparent),
-        radial-gradient(1.5px 1.5px at 26% 78%, #d8ecff, transparent),
-        radial-gradient(1px 1px at 29% 5%, #fff, transparent),
-        radial-gradient(1.2px 1.2px at 32% 27%, #e0f0ff, transparent),
-        radial-gradient(1px 1px at 35% 49%, #fff, transparent),
-        radial-gradient(1.4px 1.4px at 38% 71%, #c0d8ff, transparent),
-        radial-gradient(1px 1px at 41% 93%, #fff, transparent),
-        radial-gradient(1.1px 1.1px at 44% 15%, #e4f0ff, transparent),
-        radial-gradient(1.3px 1.3px at 47% 37%, #d0e8ff, transparent),
-        radial-gradient(1px 1px at 50% 59%, #fff, transparent),
-        radial-gradient(1.5px 1.5px at 53% 81%, #e8f4ff, transparent),
-        radial-gradient(1px 1px at 56% 3%, #fff, transparent),
-        radial-gradient(1.2px 1.2px at 59% 25%, #c8e0ff, transparent),
-        radial-gradient(1px 1px at 62% 47%, #fff, transparent),
-        radial-gradient(1.4px 1.4px at 65% 69%, #d8ecff, transparent),
-        radial-gradient(1px 1px at 68% 91%, #fff, transparent),
-        radial-gradient(1.1px 1.1px at 71% 18%, #e0f0ff, transparent),
-        radial-gradient(1.3px 1.3px at 74% 40%, #c0d8ff, transparent),
-        radial-gradient(1px 1px at 77% 62%, #fff, transparent),
-        radial-gradient(1.5px 1.5px at 80% 84%, #e4f0ff, transparent),
-        radial-gradient(1px 1px at 83% 7%, #fff, transparent),
-        radial-gradient(1.2px 1.2px at 86% 29%, #d0e8ff, transparent),
-        radial-gradient(1px 1px at 89% 51%, #fff, transparent),
-        radial-gradient(1.4px 1.4px at 92% 73%, #e8f4ff, transparent),
-        radial-gradient(1px 1px at 95% 95%, #fff, transparent),
-        radial-gradient(1.1px 1.1px at 3% 55%, #c8e0ff, transparent),
-        radial-gradient(1.3px 1.3px at 7% 77%, #fff, transparent),
-        radial-gradient(1px 1px at 12% 98%, #d8ecff, transparent),
-        radial-gradient(1.5px 1.5px at 16% 19%, #e0f0ff, transparent),
-        radial-gradient(1px 1px at 19% 42%, #fff, transparent),
-        radial-gradient(1.2px 1.2px at 24% 64%, #c0d8ff, transparent),
-        radial-gradient(1px 1px at 27% 86%, #e4f0ff, transparent),
-        radial-gradient(1.4px 1.4px at 31% 9%, #fff, transparent),
-        radial-gradient(1px 1px at 34% 31%, #d0e8ff, transparent),
-        radial-gradient(1.1px 1.1px at 37% 53%, #fff, transparent),
-        radial-gradient(1.3px 1.3px at 42% 75%, #e8f4ff, transparent),
-        radial-gradient(1px 1px at 45% 97%, #c8e0ff, transparent),
-        radial-gradient(1.5px 1.5px at 49% 21%, #fff, transparent),
-        radial-gradient(1px 1px at 54% 43%, #d8ecff, transparent),
-        radial-gradient(1.2px 1.2px at 57% 65%, #e0f0ff, transparent),
-        radial-gradient(1px 1px at 61% 87%, #fff, transparent),
-        radial-gradient(1.4px 1.4px at 64% 11%, #c0d8ff, transparent),
-        radial-gradient(1px 1px at 69% 33%, #e4f0ff, transparent),
-        radial-gradient(1.1px 1.1px at 72% 55%, #fff, transparent),
-        radial-gradient(1.3px 1.3px at 76% 77%, #d0e8ff, transparent),
-        radial-gradient(1px 1px at 79% 99%, #e8f4ff, transparent),
-        radial-gradient(1.5px 1.5px at 84% 14%, #fff, transparent),
-        radial-gradient(1px 1px at 87% 36%, #c8e0ff, transparent),
-        radial-gradient(1.2px 1.2px at 91% 58%, #d8ecff, transparent),
-        radial-gradient(1px 1px at 94% 80%, #fff, transparent),
-        radial-gradient(1.4px 1.4px at 97% 2%, #e0f0ff, transparent),
-        radial-gradient(1px 1px at 1% 70%, #fff, transparent),
-        radial-gradient(1.1px 1.1px at 6% 92%, #c0d8ff, transparent),
-        radial-gradient(1.3px 1.3px at 9% 25%, #e4f0ff, transparent),
-        radial-gradient(1px 1px at 13% 47%, #fff, transparent),
-        radial-gradient(1.5px 1.5px at 18% 69%, #d0e8ff, transparent),
-        radial-gradient(1px 1px at 21% 91%, #e8f4ff, transparent),
-        radial-gradient(1.2px 1.2px at 25% 4%, #fff, transparent),
-        radial-gradient(1px 1px at 30% 26%, #c8e0ff, transparent),
-        radial-gradient(1.4px 1.4px at 33% 48%, #d8ecff, transparent),
-        radial-gradient(1px 1px at 36% 70%, #fff, transparent),
-        radial-gradient(1.1px 1.1px at 40% 92%, #e0f0ff, transparent),
-        radial-gradient(1.3px 1.3px at 43% 16%, #c0d8ff, transparent),
-        radial-gradient(1px 1px at 46% 38%, #e4f0ff, transparent),
-        radial-gradient(1.5px 1.5px at 51% 60%, #fff, transparent),
-        radial-gradient(1px 1px at 55% 82%, #d0e8ff, transparent),
-        radial-gradient(1.2px 1.2px at 58% 6%, #e8f4ff, transparent),
-        radial-gradient(1px 1px at 63% 28%, #fff, transparent),
-        radial-gradient(1.4px 1.4px at 66% 50%, #c8e0ff, transparent),
-        radial-gradient(1px 1px at 70% 72%, #d8ecff, transparent),
-        radial-gradient(1.1px 1.1px at 73% 94%, #fff, transparent),
-        radial-gradient(1.3px 1.3px at 78% 17%, #e0f0ff, transparent),
-        radial-gradient(1px 1px at 81% 39%, #c0d8ff, transparent),
-        radial-gradient(1.5px 1.5px at 85% 61%, #e4f0ff, transparent),
-        radial-gradient(1px 1px at 88% 83%, #fff, transparent),
-        radial-gradient(1.2px 1.2px at 93% 10%, #d0e8ff, transparent),
-        radial-gradient(1px 1px at 96% 32%, #e8f4ff, transparent),
-        radial-gradient(1.4px 1.4px at 4% 54%, #fff, transparent),
-        radial-gradient(1px 1px at 10% 76%, #c8e0ff, transparent),
-        radial-gradient(1.1px 1.1px at 15% 98%, #d8ecff, transparent),
-        radial-gradient(1.3px 1.3px at 22% 20%, #fff, transparent),
-        radial-gradient(1px 1px at 28% 42%, #e0f0ff, transparent),
-        radial-gradient(1.5px 1.5px at 39% 64%, #c0d8ff, transparent),
-        radial-gradient(1px 1px at 48% 86%, #e4f0ff, transparent),
-        radial-gradient(1.2px 1.2px at 67% 8%, #fff, transparent),
-        radial-gradient(1px 1px at 75% 30%, #d0e8ff, transparent),
-        radial-gradient(1.4px 1.4px at 82% 52%, #e8f4ff, transparent),
-        radial-gradient(1px 1px at 90% 74%, #fff, transparent),
-        radial-gradient(1.1px 1.1px at 98% 96%, #c8e0ff, transparent);
-      background-size: 220% 220%;
-      animation: stars-drift 140s linear infinite;
-      opacity: 0.8;
+      overflow: hidden;
+      pointer-events: none;
+      opacity: 0.85;
     }
 
-    @keyframes bh-rotate {
-      from { transform: translate(-50%, -50%) rotate(0deg); }
-      to   { transform: translate(-50%, -50%) rotate(360deg); }
+    .star-node {
+      position: absolute;
+      left: 0;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: custom-drift linear infinite;
     }
 
-    @keyframes stars-drift {
-      from { background-position: 0% 0%; }
-      to   { background-position: 100% 50%; }
+    @keyframes custom-drift {
+      from { 
+        transform: translateX(100vw); 
+      }
+      to { 
+        transform: translateX(-5vw);
+      }
     }
+
+
   `;
   document.head.appendChild(style);
 
   const stars = document.createElement("div");
   stars.className = "stars";
   hole.appendChild(stars);
+
+  const STAR_COUNT = 120;
+  const colors = ["#ffffff", "#e0f0ff", "#d0e8ff", "#c8e0ff", "#e8f4ff", "#c0d8ff"];
+
+  for (let i = 0; i < STAR_COUNT; i++) {
+    const starNode = document.createElement("div");
+    starNode.className = "star-node";
+
+    const size = Math.random() * 1.7 + 0.7;
+    starNode.style.width = `${size}px`;
+    starNode.style.height = `${size}px`;
+
+    starNode.style.top = `${Math.random() * 100}%`;
+
+    const speed = Math.random() * 70 + 25;
+    starNode.style.animationDuration = `${speed}s`;
+
+    starNode.style.animationDelay = `${Math.random() * -speed}s`;
+
+    starNode.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    
+    if (size > 1.5) {
+      starNode.style.boxShadow = `0 0 3px ${starNode.style.backgroundColor}`;
+    }
+
+    stars.appendChild(starNode);
+  }
 
   document.body.insertBefore(hole, document.body.firstChild);
 }
