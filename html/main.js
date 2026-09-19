@@ -912,27 +912,30 @@ function getNewsPages() {
   return [
     {
       title: "What's New?",
-      desc: "v1.0.0 : Week of September 20th, 2026",
+      desc: "v1.0.1 : Week of September 20th, 2026",
       images: [
         { src: theme.img1 }
+      ],
+      changes: [
+        { text: "Hotfixes", desc: "Made the default theme a little bit better" },
+        { text: "Games Update", desc: "Fixed Escape Road, added Escape Road 2 and added suggestions." },
+        { text: "Special", desc: "oh btw today's my birthday lol" }
+        
+      ]
+    },
+    {
+      title: "What'd I Miss?",
+      desc: "v1.0.0 : Week of September 13th, 2026",
+      images: [
+        { src: theme.img2 }
       ],
       changes: [
         { text: "Release!", desc: "Infinity has now released! Expect bugs as this is a alpha version." }
       ]
     },
     {
-      title: "What'd I Miss?",
-      desc: "v0.0.9 : Week of September 13th, 2026",
-      images: [
-        { src: theme.img2 }
-      ],
-      changes: [
-        { text: "Nothing", desc: "There are no changes! Please wait for updates." }
-      ]
-    },
-    {
       title: "What's Next?",
-      desc: "v1.0.1 : Coming Soon!",
+      desc: "v1.0.2 : Coming Soon!",
       images: [
         { src: "https://placehold.co/600x400/111111/e0e0e0?text=Coming+Soon" }
       ],

@@ -1,3 +1,4 @@
+var SUGGESTION = "https://discord.com/api/webhooks/1550998760816119830/YmKICqT5wYnRrab7M5t3uaLSxpmM6F2cw-bKEFBcclxq1kBci55uZ9I5MSUrqOBoeoFC";
 var INFINITY_URL = "javascript:(()=>{fetch('https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/main/main.js').then(r=>r.text()).then(t=>{eval(t);console.log('Infinity Loaded!')}).catch(e=>console.error('Error loading script:',e))})();";
 
 document.title = "Games | Infinity";
@@ -417,6 +418,11 @@ function createTitleBar() {
       handler: showTagsModal
     },
     {
+      title: 'Report',
+      svg: '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>',
+      handler: showReportModal
+    },
+    {
       title: 'Settings',
       svg: '<svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>',
       handler: createSettingsPanel
@@ -565,6 +571,116 @@ function rollGame() {
   modal.appendChild(gameBtn);
   overlay.appendChild(modal);
   document.body.appendChild(overlay);
+}
+
+function showReportModal() {
+  if (document.querySelector('.modal-overlay')) return;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay';
+
+  const modal = document.createElement('div');
+  modal.className = 'modal report-modal';
+
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'modal-close';
+  closeBtn.textContent = '×';
+  closeBtn.onclick = () => overlay.remove();
+  modal.appendChild(closeBtn);
+
+  const title = document.createElement('div');
+  title.className = 'modal-title';
+  title.textContent = 'Report / Suggest';
+  modal.appendChild(title);
+
+  modal.innerHTML += `
+    <div class="report-form">
+      <div class="report-form-group">
+        <label>Your Name (Optional)</label>
+        <input type="text" id="report-name" placeholder="Anonymous">
+      </div>
+      <div class="report-form-group">
+        <label>Type</label>
+        <select id="report-type">
+          <option value="Bug Report">Bug Report</option>
+          <option value="Suggestion">Suggestion</option>
+          <option value="Missing Game">Missing Game</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="report-form-group">
+        <label>Title</label>
+        <input type="text" id="report-title" placeholder="Brief title...">
+      </div>
+      <div class="report-form-group">
+        <label>Details</label>
+        <textarea id="report-details" rows="4" placeholder="Describe the issue or suggestion..."></textarea>
+      </div>
+      <button class="report-submit-btn" id="report-submit">Submit</button>
+      <div id="report-message"></div>
+    </div>
+  `;
+
+  modal.querySelector('.modal-close').onclick = () => overlay.remove();
+
+  overlay.appendChild(modal);
+  document.body.appendChild(overlay);
+
+  modal.querySelector('#report-submit').addEventListener('click', async () => {
+    const name    = modal.querySelector('#report-name').value.trim() || 'Anonymous';
+    const type    = modal.querySelector('#report-type').value;
+    const rtitle  = modal.querySelector('#report-title').value.trim();
+    const details = modal.querySelector('#report-details').value.trim();
+    const msgEl   = modal.querySelector('#report-message');
+
+    if (!rtitle || !details) {
+      msgEl.style.color = '#ff6b6b';
+      msgEl.textContent = 'Please fill in the title and details.';
+      return;
+    }
+
+    const submitBtn = modal.querySelector('#report-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    const payload = {
+      embeds: [{
+        title: `${type}: ${rtitle}`,
+        color: type === 'Bug Report' ? 0xff4444 : type === 'Suggestion' ? 0x4488ff : 0xffaa00,
+        fields: [
+          { name: 'Submitted By', value: name, inline: true },
+          { name: 'Type', value: type, inline: true },
+          { name: 'Details', value: details }
+        ],
+        footer: { text: 'Zephware Games' },
+        timestamp: new Date().toISOString()
+      }]
+    };
+
+    try {
+      const res = await fetch(SUGGESTION, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (res.ok) {
+        msgEl.style.color = '#4ade80';
+        msgEl.textContent = 'Submitted! Thank you.';
+        modal.querySelector('#report-title').value = '';
+        modal.querySelector('#report-details').value = '';
+        setTimeout(() => overlay.remove(), 2000);
+      } else {
+        throw new Error('Bad response');
+      }
+    } catch {
+      msgEl.style.color = '#ff6b6b';
+      msgEl.textContent = 'Failed to send. Please try again.';
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit';
+  });
 }
 
 function createSettingsPanel() {
