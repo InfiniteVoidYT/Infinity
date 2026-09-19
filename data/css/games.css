@@ -301,6 +301,84 @@ body {
   z-index: 9998;
 }
 
+.report-modal {
+  max-width: 480px;
+  width: 90%;
+}
+
+.report-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.report-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.report-form-group label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Fredoka', sans-serif;
+}
+
+.report-form-group input,
+.report-form-group select,
+.report-form-group textarea {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 14px;
+  padding: 8px 12px;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.15s;
+}
+
+.report-form-group input:focus,
+.report-form-group select:focus,
+.report-form-group textarea:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.report-form-group select option {
+  background: #1a1a2e;
+}
+
+.report-submit-btn {
+  background: #272d38;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.report-submit-btn:hover {
+  background: #70757e;
+}
+
+.report-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#report-message {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 13px;
+  min-height: 18px;
+  text-align: center;
+}
+
 .roller-modal {
   width: 240px;
   height: 300px;
