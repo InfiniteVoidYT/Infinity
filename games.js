@@ -108,44 +108,44 @@ function handleRouteChange() {
   }
 }
 
-async function loadGameBuild(rawOrShorthandUrl) {
+async function loadGameBuild(rawOrShorthandUrl, savedLS = {}) {
   try {
-    var baseUrl = convertToRawGitHubURL(rawOrShorthandUrl);
+    let baseUrl = convertToRawGitHubURL(rawOrShorthandUrl);
     if (!baseUrl.endsWith('/')) baseUrl += '/';
 
-    var fetchCache = new Map();
-    var cachedFetch = (url) => {
+    const fetchCache = new Map();
+    const cachedFetch = (url) => {
       if (fetchCache.has(url)) return fetchCache.get(url);
-      var p = fetch(url);
+      const p = fetch(url);
       fetchCache.set(url, p);
       return p;
     };
 
-    var resp = await cachedFetch(baseUrl + 'index.html');
-    if (!resp.ok) throw new Error(`Failed to fetch Infinity: ${resp.status}`);
-    var htmlText = await resp.text();
+    const resp = await cachedFetch(baseUrl + 'index.html');
+    if (!resp.ok) throw new Error(`Failed to fetch index.html: ${resp.status}`);
+    let htmlText = await resp.text();
 
-    var externalScriptPatterns = [
+    const externalScriptPatterns = [
       /https:\/\/apis\.google\.com/gi,
       /https?:\/\/connect\.facebook\.net/gi,
       /https?:\/\/cdn\.ravenjs\.com/gi,
       /https:\/\/.*doorbell\.io/gi,
-      /https?:\/\/.*googvaragmanager/gi,
+      /https?:\/\/.*googletagmanager/gi,
       /https?:\/\/.*analytics/gi,
       /https?:\/\/static\.addtoany/gi
     ];
 
     htmlText = htmlText.replace(/<script[\s\S]*?<\/script>/gi, (match) => {
-      for (var pattern of externalScriptPatterns) {
+      for (const pattern of externalScriptPatterns) {
         if (pattern.test(match)) return '';
       }
       return match;
     });
 
-    var parser = new DOMParser();
-    var doc = parser.parseFromString(htmlText, 'text/html');
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlText, 'text/html');
 
-    var baseEl = doc.querySelector('base');
+    let baseEl = doc.querySelector('base');
     if (!baseEl) {
       baseEl = doc.createElement('base');
       baseEl.href = baseUrl;
@@ -154,21 +154,21 @@ async function loadGameBuild(rawOrShorthandUrl) {
       baseEl.href = baseUrl;
     }
 
-    var linkEls = Array.from(doc.querySelectorAll('link[rel="stylesheet"]'));
-    for (var link of linkEls) {
-      var href = link.getAttribute('href') || '';
-      var absHref = makeAbsoluteURL(baseUrl, href);
+    const linkEls = Array.from(doc.querySelectorAll('link[rel="stylesheet"]'));
+    for (const link of linkEls) {
+      const href = link.getAttribute('href') || '';
+      const absHref = makeAbsoluteURL(baseUrl, href);
       try {
-        var cssResp = await cachedFetch(absHref);
+        const cssResp = await cachedFetch(absHref);
         if (!cssResp.ok) throw new Error('CSS fetch failed');
-        var cssText = await cssResp.text();
-        var cssDir = absHref.substring(0, absHref.lastIndexOf('/') + 1);
+        let cssText = await cssResp.text();
+        const cssDir = absHref.substring(0, absHref.lastIndexOf('/') + 1);
         cssText = cssText.replace(/url\(([^)]+)\)/gi, (match, p1) => {
-          var clean = p1.trim().replace(/^['"]|['"]$/g, '');
+          const clean = p1.trim().replace(/^['"]|['"]$/g, '');
           if (/^(data:|https?:|\/\/)/i.test(clean)) return match;
           return `url("${makeAbsoluteURL(cssDir, clean)}")`;
         });
-        var styleEl = doc.createElement('style');
+        const styleEl = doc.createElement('style');
         styleEl.textContent = cssText;
         link.replaceWith(styleEl);
       } catch {
@@ -176,15 +176,15 @@ async function loadGameBuild(rawOrShorthandUrl) {
       }
     }
 
-    var scriptEls = Array.from(doc.querySelectorAll('script[src]'));
-    for (var script of scriptEls) {
-      var src = script.getAttribute('src') || '';
-      var absSrc = makeAbsoluteURL(baseUrl, src);
+    const scriptEls = Array.from(doc.querySelectorAll('script[src]'));
+    for (const script of scriptEls) {
+      const src = script.getAttribute('src') || '';
+      const absSrc = makeAbsoluteURL(baseUrl, src);
       try {
-        var jsResp = await cachedFetch(absSrc);
+        const jsResp = await cachedFetch(absSrc);
         if (!jsResp.ok) throw new Error('JS fetch failed');
-        var jsText = await jsResp.text();
-        var inline = doc.createElement('script');
+        const jsText = await jsResp.text();
+        const inline = doc.createElement('script');
         inline.textContent = jsText;
         script.replaceWith(inline);
       } catch {
@@ -192,7 +192,7 @@ async function loadGameBuild(rawOrShorthandUrl) {
       }
     }
 
-    var resourceAttrs = [
+    const resourceAttrs = [
       { sel: 'img', attr: 'src' },
       { sel: 'audio', attr: 'src' },
       { sel: 'video', attr: 'src' },
@@ -202,50 +202,25 @@ async function loadGameBuild(rawOrShorthandUrl) {
       { sel: 'link[rel="icon"]', attr: 'href' }
     ];
 
-    for (var { sel, attr } of resourceAttrs) {
-      for (var node of doc.querySelectorAll(sel)) {
-        var val = node.getAttribute(attr);
+    for (const { sel, attr } of resourceAttrs) {
+      for (const node of doc.querySelectorAll(sel)) {
+        const val = node.getAttribute(attr);
         if (!val || /^(https?:|\/\/|data:|mailto:|javascript:)/i.test(val)) continue;
         node.setAttribute(attr, makeAbsoluteURL(baseUrl, val));
       }
     }
 
-    var runtimeFix = doc.createElement('script');
-    runtimeFix.textContent = `
-      (function() {
-        var base = ${JSON.stringify(baseUrl)};
-        var origFetch = window.fetch;
-        window.fetch = function(input, init) {
-          try {
-            if (typeof input === 'string' && !/^(https?:|data:|blob:)/i.test(input)) {
-              input = new URL(input, base).href;
-            }
-          } catch(e) {}
-          return origFetch.call(this, input, init);
-        };
+    let spoofHost = '';
+    const _ghm = baseUrl.match(/raw\.githubusercontent\.com\/([^\/]+)\/([^\/]+)\//);
+    if (_ghm) {
+      spoofHost = _ghm[2].endsWith('.github.io') ? _ghm[2] : `${_ghm[1]}.github.io`;
+    }
 
-        var origXHROpen = XMLHttpRequest.prototype.open;
-        XMLHttpRequest.prototype.open = function(method, url) {
-          try {
-            if (url && !/^(https?:|data:|blob:)/i.test(url)) {
-              url = new URL(url, base).href;
-            }
-          } catch(e) {}
-          return origXHROpen.apply(this, arguments);
-        };
+    const runtimeFix = doc.createElement('script');
+    runtimeFix.textContent = _buildBridgeScript(baseUrl, spoofHost, savedLS);
+    (doc.head || doc.documentElement).insertBefore(runtimeFix, doc.head?.firstChild || null);
 
-        var origWorker = window.Worker;
-        window.Worker = function(url, options) {
-          if (!/^(https?:|blob:)/i.test(url)) {
-            url = new URL(url, base).href;
-          }
-          return new origWorker(url, options);
-        };
-      })();
-    `;
-    (doc.head || doc.documentElement).appendChild(runtimeFix);
-
-    var finalHtml = '<!doctype html>\n' + doc.documentElement.outerHTML;
+    const finalHtml = '<!doctype html>\n' + doc.documentElement.outerHTML;
     return URL.createObjectURL(new Blob([finalHtml], { type: 'text/html' }));
   } catch (e) {
     console.error('Error building game:', e);
