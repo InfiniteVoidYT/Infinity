@@ -37,7 +37,12 @@
  {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/EscapeRoad.png",
   "label": "Escape Road",
-  "url": "https://d1yh00vn2fvto7.cloudfront.net/play?gameID=game_5785_1561b7c94b62d"
+  "url": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/games/Escape Road/index.html"
+ },
+ {
+  "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/EscapeRoad2.png",
+  "label": "Escape Road",
+  "url": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/games/Escape Road 2/index.html"
  },
  {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/FNAF.png",
