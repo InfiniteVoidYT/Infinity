@@ -273,18 +273,18 @@ function saveGameState(config, iframe) {
 }
 
 async function openGame(config, fromRoute = false) {
-  _session.teardown();
-  _session.config = config;
-
   if (panel) panel.style.display = 'none';
+
   document.querySelectorAll('.game-player, .game-back-bar').forEach(el => el.remove());
 
-  if (!fromRoute) setRoute(slugMap.get(config) || '');
+  if (!fromRoute) {
+    setRoute(slugMap.get(config) || '');
+  }
 
-  const backBar = document.createElement('div');
+  var backBar = document.createElement('div');
   backBar.className = 'game-back-bar';
 
-  const backBtn = document.createElement('button');
+  var backBtn = document.createElement('button');
   backBtn.className = 'game-back-btn';
   backBtn.innerHTML = `
     <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
@@ -292,9 +292,11 @@ async function openGame(config, fromRoute = false) {
     </svg>
     Back to Games
   `;
-  backBtn.addEventListener('click', () => setRoute(''));
+  backBtn.addEventListener('click', () => {
+    setRoute('');
+  });
 
-  const gameTitle = document.createElement('div');
+  var gameTitle = document.createElement('div');
   gameTitle.className = 'game-back-title';
   gameTitle.textContent = config.label || '';
 
@@ -302,48 +304,27 @@ async function openGame(config, fromRoute = false) {
   backBar.appendChild(gameTitle);
   document.body.appendChild(backBar);
 
-  let url = config.url;
-  const isGameBuild = config.type === 'gameBuild' ||
-    (/gameBuilds|github|raw\.githubusercontent\.com/i.test(url) && !url.endsWith('.swf'));
+  var url = config.url;
 
-  if (isGameBuild) {
-    let savedLS = {};
+  if (config.type === 'gameBuild' || (/gameBuilds|github|raw.githubusercontent.com/i.test(url) && !url.endsWith('.swf'))) {
     try {
-      const rec = await saveGetRecord(config);
-      savedLS = rec.ls || {};
-    } catch(e) {}
-
-    try {
-      url = await loadGameBuild(url, savedLS);
+      url = await loadGameBuild(url);
     } catch (e) {
       console.error('Failed to load game build:', e);
       alert('Failed to load game. Please try again.');
       closeGame();
       return;
     }
-
-    const lsMsgHandler = async (e) => {
-      if (e.data?.type !== 'in_ls_save') return;
-      const snap = e.data.data;
-      const h    = _hash(snap);
-      if (h === _session.lastHash) return;
-      _session.lastHash = h;
-      try {
-        await savePutRecord(config, { ls: snap });
-        _showSaveToast();
-      } catch(err) { console.warn('[IN save] postMessage write failed:', err); }
-    };
-    _session.on(window, 'message', lsMsgHandler);
   }
 
   if (url && url.endsWith('.swf')) {
     try {
       await injectRuffle();
-      const ruffle = window.RufflePlayer.newest();
-      const player = ruffle.createPlayer();
+      var ruffle = window.RufflePlayer.newest();
+      var player = ruffle.createPlayer();
       player.className = 'game-player';
       document.body.appendChild(player);
-      await enableRuffleSave(player, config);
+      await enableRuffleSave(player, config.url || url);
       player.load(url);
     } catch (e) {
       console.error('Ruffle error:', e);
@@ -353,12 +334,16 @@ async function openGame(config, fromRoute = false) {
     return;
   }
 
-  const iframe = document.createElement('iframe');
+  var iframe = document.createElement('iframe');
   iframe.className = 'game-player';
   iframe.src = url;
   iframe.allow = "autoplay; fullscreen; gamepad; microphone; camera";
   iframe.sandbox = "allow-scripts allow-same-origin allow-forms allow-popups allow-pointer-lock allow-modals";
   document.body.appendChild(iframe);
+
+  if (config.type === 'gameBuild') {
+    setInterval(() => saveGameState(config, iframe), 5000);
+  }
 }
 
 function closeGame() {

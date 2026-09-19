@@ -920,10 +920,7 @@ function getNewsPages() {
         { src: theme.img1 }
       ],
       changes: [
-        { text: "Hotfixes", desc: "Made the default theme a little bit better" },
-        { text: "Games Update", desc: "Fixed Escape Road, added Escape Road 2 and added suggestions." },
-        { text: "Special", desc: "oh btw today's my birthday lol" }
-        
+        { text: "Hotfixes", desc: "Made the default theme a little bit better" }
       ]
     },
     {
