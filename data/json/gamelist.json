@@ -37,12 +37,12 @@
 {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/EscapeRoad.png",
   "label": "Escape Road",
-  "url": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/games/escaperoad"
+  "url": "https://cdn.jsdelivr.net/gh/InfiniteVoidYT/Infinity/games/escaperoad/Escape%20Road.html"
  },
  {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/EscapeRoad2.png",
   "label": "Escape Road 2",
-  "url": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/games/escaperoad2"
+  "url": "https://cdn.jsdelivr.net/gh/InfiniteVoidYT/Infinity/games/escaperoad2/Escape%20Road%202.html"
  },
  {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/FNAF.png",
