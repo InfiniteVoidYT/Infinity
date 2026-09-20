@@ -34,6 +34,16 @@
   "label": "Balatro",
   "url": "https://d3rtzzzsiu7gdr.cloudfront.net/files/balatro/index.html"
  },
+{
+  "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/EscapeRoad.png",
+  "label": "Escape Road",
+  "url": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/main/games/escaperoad.html"
+ },
+ {
+  "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/EscapeRoad2.png",
+  "label": "Escape Road 2",
+  "url": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/main/games/escaperoad2.html/"
+ },
  {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/FNAF.png",
   "label": "Five Night's at Freddy's",
