@@ -9,7 +9,7 @@ This project is intended to bypass GoGuardian and Securly, if you have another b
 <br>Step 2. Copy the code and set it as the url for a bookmark
 <br>Step 3. Run the bookmark on and only on google.com (NOTHING ELSE)
 <h4>This method can be used anywhere</h4>
-<br>Step 1. Download <a href="https://github.com/InfiniteVoidYT/Infinity/blob/main/infinity/html" target="_blank">infinity.html</a>
+<br>Step 1. Download <a href="https://github.com/InfiniteVoidYT/Infinity/blob/main/Infinity.html" target="_blank">infinity.html</a>
 <br>Step 2. Run it on any device of any choice.
 <br>Step 3. Done! Go enjoy your games, fun, etc!
 
