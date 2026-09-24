@@ -1,6 +1,6 @@
 [
  {  
-  "url": "../games/gn-math.svg",
+  "url": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/games/gn-math.svg",
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/gn-math.gif",
   "label": "gn-math"
 },
@@ -42,12 +42,12 @@
 {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/EscapeRoad.png",
   "label": "Escape Road",
-  "url": "../games/escaperoad.svg"
+  "url": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/games/escaperoad.svg"
  },
  {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/EscapeRoad2.png",
   "label": "Escape Road 2",
-  "url": "../games/escaperoad2.svg"
+  "url": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/games/escaperoad2.svg"
  },
  {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/FNAF.png",
