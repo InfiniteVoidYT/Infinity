@@ -424,6 +424,7 @@ async function openGame(config, fromRoute = false) {
     (
       !url.endsWith('.html') &&
       !url.endsWith('.swf') &&
+      !url.endsWith('.svg') &&
       /github|raw\.githubusercontent\.com|gameBuilds/i.test(url)
     );
 
