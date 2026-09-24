@@ -918,7 +918,7 @@ function getNewsPages() {
       ],
       changes: [
         { text: "Hotfixes", desc: "Made the default theme a little bit better" },
-        { text: "Games Update", desc: "Added suggestions for y'all to suggest me games :D" },
+        { text: "Huge Games Update", desc: "Fixed Escape Road, added Escape Road 2 + gn-math and suggestions for y'all to suggest me games :D" },
         { text: "Update", desc: "expect mini updates soon lol as I add stuff :D" }
       ]
     },
