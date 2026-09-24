@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" style="position:fixed;top:0;left:0;">
+  <foreignObject x="0" y="0" width="100%" height="100%">
+    <body xmlns="http://www.w3.org/1999/xhtml">
+      <iframe id="site" style="position:fixed;top:0;left:0;width:100%;height:100%;border:none;z-index:999999;"
+        srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot; /&gt;
+    &lt;title&gt;Escape Road 2&lt;/title&gt;
+    &lt;style&gt;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; background: #000; }
+        iframe { border: 0; width: 100%; height: 100%; display: block; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;iframe src=&quot;Escape Road 2.html&quot; allowfullscreen allow=&quot;fullscreen&quot;&gt;&lt;/iframe&gt;
+&lt;/body&gt;
+&lt;/html&gt;"></iframe>
+    </body>
+  </foreignObject>
+</svg>

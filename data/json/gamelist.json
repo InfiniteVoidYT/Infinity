@@ -1,4 +1,9 @@
 [
+ {  
+  "url": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/games/gn-math.svg",
+  "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/gn-math.gif",
+  "label": "gn-math"
+ },
  {
   "image": "https://d3rtzzzsiu7gdr.cloudfront.net/files/polytrack/splash.png",
   "label": "Polytrack",
@@ -29,10 +34,20 @@
   "label": "Geometry Dash",
   "url": "https://d1yh00vn2fvto7.cloudfront.net/play?gameID=game_28d8_bb38d44c326f3"
  },
-  {
+ {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/Balatro.png",
   "label": "Balatro",
   "url": "https://d3rtzzzsiu7gdr.cloudfront.net/files/balatro/index.html"
+ },
+ {
+  "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/EscapeRoad.png",
+  "label": "Escape Road",
+  "url": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/games/escaperoad.svg"
+ },
+ {
+  "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/EscapeRoad2.png",
+  "label": "Escape Road 2",
+  "url": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/games/escaperoad2.svg"
  },
  {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/FNAF.png",

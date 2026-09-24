@@ -849,7 +849,7 @@ var fontLink = document.createElement('link');
 }
 
 function loadGameList() {
-  fetch('../svg/gamelist.json')
+  fetch('https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/data/json/gamelist.json')
     .then(response => response.json())
     .then(data => {
       buttonConfigs = data;
