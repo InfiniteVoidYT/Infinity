@@ -43,12 +43,14 @@
 {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/EscapeRoad.png",
   "label": "Escape Road",
-  "url": "https://infinityforever.vercel.app/games/escaperoad.html"
+  "url": "InfiniteVoidYT/Infinity/main/games/escaperoad",
+  "type": "gameBuild"
  },
  {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/EscapeRoad2.png",
   "label": "Escape Road 2",
-  "url": "https://infinityforever.vercel.app/games/escaperoad2.html"
+  "url": "InfiniteVoidYT/Infinity/main/games/escaperoad2",
+  "type": "gameBuild"
  },
  {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/FNAF.png",
