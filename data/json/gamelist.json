@@ -1,6 +1,6 @@
 [
  {  
-  "url": "https://infinityforever.vercel.app/games/gn-math.svg",
+  "url": "https://infinityforever.vercel.app/games/gn-math.html",
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/gn-math.gif",
   "label": "gn-math"
 },
@@ -42,12 +42,12 @@
 {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/EscapeRoad.png",
   "label": "Escape Road",
-  "url": "https://infinityforever.vercel.app/games/escaperoad.svg"
+  "url": "https://infinityforever.vercel.app/games/escaperoad.html"
  },
  {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/EscapeRoad2.png",
   "label": "Escape Road 2",
-  "url": "https://infinityforever.vercel.app/games/escaperoad2.svg"
+  "url": "https://infinityforever.vercel.app/games/escaperoad2.html"
  },
  {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/FNAF.png",
