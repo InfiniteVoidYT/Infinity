@@ -4,7 +4,7 @@
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/gn-math.gif",
   "label": "gn-math",
   "type": "gameBuild"
-},
+ },
  {
   "image": "https://d3rtzzzsiu7gdr.cloudfront.net/files/polytrack/splash.png",
   "label": "Polytrack",
@@ -39,24 +39,6 @@
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/Balatro.png",
   "label": "Balatro",
   "url": "https://d3rtzzzsiu7gdr.cloudfront.net/files/balatro/index.html"
- },
- {
-  "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/EscapeRoad.png",
-  "label": "Escape Road",
-  "url": "fdfdsfadf/All-escape-road-games/main/escape-road",
-  "type": "gameBuild"
- }, 
- {
-  "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/EscapeRoad2.png",
-  "label": "Escape Road 2",
-  "url": "fdfdsfadf/All-escape-road-games/tree/main/escape-road-2",
-  "type": "gameBuild"
- }, 
- {
-  "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/EscapeRoad3.png",
-  "label": "Escape Road 3",
-  "url": "StaticQuasar931/Escape-Road-3/main",
-  "type": "gameBuild"
  },
  {
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/FNAF.png",
