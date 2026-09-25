@@ -1,8 +1,9 @@
 [
  {  
-  "url": "https://infinityforever.vercel.app/games/gn-math.html",
+  "url": "InfiniteVoidYT/Infinity/main/games/escaperoad",
   "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/gn-math.gif",
-  "label": "gn-math"
+  "label": "gn-math",
+  "type": "gameBuild"
 },
  {
   "image": "https://d3rtzzzsiu7gdr.cloudfront.net/files/polytrack/splash.png",
