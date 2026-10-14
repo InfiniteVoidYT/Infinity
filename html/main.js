@@ -912,23 +912,23 @@ function getNewsPages() {
   return [
     {
       title: "What's New?",
-      desc: "v1.0.1 : Week of September 20th, 2026",
+      desc: "v1.0.2 : Week of October 13th, 2026",
       images: [
         { src: theme.img1 }
       ],
       changes: [
-        { text: "Hotfixes", desc: "Made the default theme a little bit better" },
-        { text: "Update", desc: "expect mini updates soon lol as I add stuff :D" }
+        { text: "Games", desc: "removed a TON of blocked games, if yall want games please suggest me them :p" }
       ]
     },
     {
       title: "What'd I Miss?",
-      desc: "v1.0.0 : Week of September 13th, 2026",
+      desc: "v1.0.1 : Week of September 20th, 2026",
       images: [
         { src: theme.img2 }
       ],
       changes: [
-        { text: "Release!", desc: "Infinity has now released! Expect bugs as this is a alpha version." }
+        { text: "Hotfixes", desc: "Made the default theme a little bit better" },
+        { text: "Update", desc: "expect mini updates soon lol as I add stuff :D" }
       ]
     },
     {
