@@ -1,6 +1,6 @@
 <h1> Infinity </h1>
 Infinity is a random project dedicated for school with stuff like blooket cheats along with games and other utilities.
-This project is intended to bypass GoGuardian and Securly, if you have another blocker, this might not work so don't blame me.
+This project is intended to bypass blockers like GoGuardian and Securly, if you have another blocker, this might not work so don't blame me.
 
 
 ## How to Use:
@@ -15,6 +15,7 @@ This project is intended to bypass GoGuardian and Securly, if you have another b
 <h4>This method can be used anywhere</h4>
 <br>Step 1. Go to this <a href="https://cdn.jsdelivr.net/gh/InfiniteVoidYT/Infinity/svg/index.svg" target="_blank">website</a>
 <br>Step 2. All done! Go have some fun :D
+<h4>If all of these are blocked, let me know</h4>
 
 
 ## Contributors

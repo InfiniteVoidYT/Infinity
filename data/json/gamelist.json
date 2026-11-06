@@ -1,11 +1,5 @@
 [
   {
-    "url": "InfiniteVoidYT/Infinity/main/games/gn-math",
-    "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/gn-math.gif",
-    "label": "gn-math",
-    "type": "gameBuild"
-  },
-  {
     "image": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/assets/games/Commando2.png",
     "label": "Commando 2",
     "url": "https://raw.githubusercontent.com/InfiniteVoidYT/Infinity/refs/heads/main/swf/commando2.swf"

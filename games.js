@@ -749,7 +749,7 @@ function showReportModal() {
           { name: 'Type', value: type, inline: true },
           { name: 'Details', value: details }
         ],
-        footer: { text: 'Zephware Games' },
+        footer: { text: 'Infinity Games' },
         timestamp: new Date().toISOString()
       }]
     };
